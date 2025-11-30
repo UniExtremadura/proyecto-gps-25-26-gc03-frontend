@@ -1,0 +1,293 @@
+/* --- Mantén todo tu CSS anterior igual, y añade/reemplaza esto al final --- */
+:root {
+    --bg: #0f1113;
+    --card: #16181b;
+    --muted: #9aa0a6;
+    --accent: #1db954;
+    --text: #f5f5f5;
+
+    /* Variables adicionales para el formulario */
+    --input-bg: rgba(255, 255, 255, 0.05);
+    --input-border: rgba(255, 255, 255, 0.1);
+}
+
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: Inter, Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header { width: 100%; max-width: 1100px; display:flex; justify-content:space-between; align-items:center; }
+h1 { margin: 0 0 12px 0; font-size: 1.5rem; }
+#status { color: var(--muted); font-size: 0.9rem; }
+
+main { width: 100%; max-width: 1100px; margin-top: 18px; }
+
+#song-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.song-card {
+    background: var(--card);
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform .12s ease, box-shadow .12s ease;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    align-items:stretch;
+}
+
+.song-card:hover { transform: translateY(-4px); box-shadow: 0 6px 18px rgba(0,0,0,.45); }
+.song-card img { width:100%; height:150px; object-fit:cover; border-radius:6px; }
+.song-card h3 { margin:0; font-size:1rem; }
+.song-card p { margin:0; color:var(--muted); font-size: .85rem; }
+
+#player { margin-top: 28px; display:flex; gap:20px; align-items:center; background: rgba(255,255,255,0.02); padding:16px; border-radius:10px; flex-wrap:wrap; }
+#cover { width:160px; height:160px; object-fit:cover; border-radius:8px; background:#222; }
+#meta { flex:1; text-align:left; min-width: 180px; }
+#song-title { margin:0 0 6px 0; font-size:1.25rem; }
+#song-artist { margin:0; color:var(--muted); }
+
+.player-controls { display:flex; gap:8px; margin-top:8px; width:100%; }
+.player-controls button { padding:6px 10px; border-radius:6px; border: none; cursor:pointer; background:#222; color:var(--text); }
+.player-controls button:disabled { opacity: .45; cursor: not-allowed; }
+
+#player-status { margin-top:8px; color:var(--muted); font-size:.9rem; width:100%; }
+.hints { color:var(--muted); font-size:.85rem; margin-top:6px; }
+
+.volume-container { display:flex; align-items:center; gap:10px; margin-top:12px; width:100%; max-width:420px; }
+#mute-btn { height:36px; width:36px; border-radius:6px; border:none; background:#222; color:var(--text); cursor:pointer; display:inline-flex; align-items:center; justify-content:center; font-size:18px; }
+
+#volume-slider { -webkit-appearance: none; appearance: none; height:6px; border-radius:6px; background: rgba(255,255,255,0.08); flex:1; cursor:pointer; }
+#volume-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width:16px; height:16px; border-radius:50%; background:#fff; box-shadow: 0 0 0 4px rgba(255,255,255,0.06); border: none; }
+#volume-slider::-moz-range-thumb { width:16px; height:16px; border-radius:50%; background:#fff; border: none; }
+#volume-value { min-width:48px; text-align:right; color:var(--muted); font-size:.95rem; }
+
+#search-bar { width: 60%; padding: 12px; margin-bottom: 25px; border: none; border-radius: 8px; font-size: 16px; background: var(--input-bg); color: var(--text); }
+
+/* --- SECCIÓN DE PERFIL --- */
+.profile-container { width: 100%; max-width: 500px; margin: 0 auto; }
+
+.profile-card {
+    background: var(--card);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.profile-card .header h2 { color: var(--text); margin-top: 0; }
+.profile-card .header p { color: var(--muted); margin-bottom: 20px; }
+
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 500; font-size: 0.9rem; color: var(--muted); }
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: 0.2s;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.read-only { background-color: rgba(255,255,255,0.02) !important; color: #666 !important; font-style: italic; cursor: not-allowed; }
+
+.save-btn {
+    width: 100%; padding: 14px; background-color: var(--accent); color: #000;
+    border: none; border-radius: 25px; font-weight: 700; font-size: 1rem;
+    cursor: pointer; transition: 0.2s; text-transform: uppercase; margin-top: 10px;
+}
+.save-btn:hover { transform: scale(1.02); opacity: 0.9; }
+
+.debug-controls { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--input-border); }
+.debug-controls input { background: #000; border: 1px solid #333; color: var(--accent); font-family: monospace; }
+#loadBtn { background-color: #333; color: var(--text); border: none; padding: 10px; border-radius: 6px; cursor: pointer; flex: 1; }
+#loadBtn:hover { background-color: #444; }
+
+.message { margin-top: 20px; padding: 12px; border-radius: 8px; text-align: center; font-weight: 600; font-size: 0.9rem; }
+.success { background-color: rgba(29, 185, 84, 0.2); color: #1db954; border: 1px solid #1db954; }
+.error { background-color: rgba(255, 87, 87, 0.2); color: #ff5757; border: 1px solid #ff5757; }
+.hidden { display: none; }
+/* Estilo para el selector múltiple de géneros */
+/* Contenedor para añadir el icono de flecha personalizado */
+/* Contenedor para añadir el icono de flecha personalizado */
+.select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+/* Estilo del Selector Múltiple */
+select[multiple] {
+    width: 100%;
+    height: 150px; /* Altura fija para mostrar varias opciones */
+    padding: 10px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.95rem;
+    appearance: none; /* Quita estilo nativo */
+    -webkit-appearance: none;
+    overflow-y: auto; /* Barra de scroll si hay muchos géneros */
+    transition: border-color 0.2s ease;
+}
+
+select[multiple]:focus {
+    outline: none;
+    border-color: var(--accent);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Estilo de las Opciones (Cada género) */
+select[multiple] option {
+    padding: 8px 12px;
+    margin-bottom: 4px;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.03); /* Fondo sutil */
+    color: var(--muted);
+    cursor: pointer;
+    transition: 0.15s ease;
+    font-weight: 500;
+}
+
+/* Opción al pasar el ratón */
+select[multiple] option:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: var(--text);
+}
+
+/* Opción SELECCIONADA */
+select[multiple] option:checked {
+    background-color: var(--accent) !important; /* Verde Spotify */
+    color: #000 !important; /* Texto negro para contraste */
+    font-weight: 700;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Personalización de la barra de scroll (Chrome/Safari) */
+select[multiple]::-webkit-scrollbar {
+    width: 8px;
+}
+select[multiple]::-webkit-scrollbar-track {
+    background: var(--input-bg);
+    border-radius: 8px;
+}
+select[multiple]::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+}
+select[multiple]::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Estilos para filas de Redes Sociales */
+.social-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+/* --- ESTILO PARA EL DESPLEGABLE DE REDES SOCIALES --- */
+
+.social-select {
+    width: 35%;
+    padding: 12px;
+    padding-right: 30px; /* Espacio para la flecha */
+
+    /* Colores oscuros */
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    color: var(--text);
+
+    font-size: 0.95rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: 0.2s ease;
+
+    /* TRUCO: Quitar la flecha fea por defecto del navegador */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    /* Poner nuestra propia flecha moderna (SVG codificado en base64) */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239aa0a6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+}
+
+.social-select:focus {
+    outline: none;
+    border-color: var(--accent);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Estilo para las opciones internas (al desplegar) */
+.social-select option {
+    background-color: #16181b; /* Color de fondo oscuro sólido para el menú desplegado */
+    color: #f5f5f5;
+    padding: 10px;
+}
+
+.social-input {
+    flex: 1; /* Ocupa el resto del espacio */
+}
+
+.remove-btn {
+    background: transparent;
+    border: 1px solid #ff5757;
+    color: #ff5757;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.remove-btn:hover {
+    background: rgba(255, 87, 87, 0.1);
+}
+
+/* Botón Secundario (Añadir Red) */
+.secondary-btn {
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    transition: 0.2s;
+}
+
+.secondary-btn:hover {
+    background: rgba(29, 185, 84, 0.1);
+}

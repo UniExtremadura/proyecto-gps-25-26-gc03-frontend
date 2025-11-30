@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicFly - Soy Artista</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="auth-card">
+
+    <div class="header-section">
+        <h2>Perfil de Artista</h2>
+        <p>Completa tu perfil para subir música.</p>
+    </div>
+
+    <form id="artist-form">
+
+        <div class="form-group">
+            <label for="artistName">Nombre Artístico</label>
+            <input type="text" id="artistName" name="artistName" required placeholder="Ej. Bad Bunny" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+            <label for="description">Descripción / Biografía</label>
+            <textarea id="description" name="description" rows="3" required placeholder="Cuéntanos sobre tu estilo musical..."
+                      style="width: 100%; padding: 12px 15px; border-radius: 15px; background-color: #282828; color: #fff; border: 1px solid transparent; outline: none; resize: none;"></textarea>
+        </div>
+
+        <div class="row-group">
+            <div class="form-group">
+                <label for="iban">IBAN</label>
+                <input type="text" id="iban" name="iban" required placeholder="ES00 0000..." autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="accountPropietary">Titular de Cuenta</label>
+                <input type="text" id="accountPropietary" name="accountPropietary" required placeholder="Nombre del titular" autocomplete="off">
+            </div>
+        </div>
+
+        <button type="submit" class="action-btn">Convertirme en Artista</button>
+    </form>
+
+    <div id="artist-status" class="message"></div>
+
+    <a href="index.html" class="auth-link">
+        Volver al inicio
+    </a>
+</div>
+
+<script src="artist-register.js"></script>
+
+</body>
+</html>

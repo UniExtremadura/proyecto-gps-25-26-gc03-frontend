@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Reproductor de Música</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Reproductor de Música</h1>
+    <input id="search-bar" type="text" placeholder="Buscar canción..." />
+  </header>
+
+  <main>
+    <section id="song-list" aria-live="polite"></section>
+
+    <section id="player" hidden>
+      <img id="cover" src="" alt="Portada de la canción" />
+      <div id="meta">
+        <h2 id="song-title">Título</h2>
+        <p id="song-artist"></p>
+      </div>
+
+      <audio id="audio-player" controls preload="none"></audio>
+
+      <div class="player-controls">
+        <button id="prev-btn" disabled>Anterior</button>
+        <button id="next-btn" disabled>Siguiente</button>
+        <button id="download-btn">Descargar</button>
+      </div>
+
+      <!-- Barra de volumen -->
+      <div id="volume-container" class="volume-container" aria-label="Controles de volumen">
+        <button id="mute-btn" aria-pressed="false" title="Silenciar (M)">🔊</button>
+        <input id="volume-slider" type="range" min="0" max="100" step="1" value="100" aria-label="Volumen">
+        <span id="volume-value">100%</span>
+      </div>
+
+      <div id="player-status"></div>
+      <div id="hints" class="hints">Atajo: pulsa <strong>M</strong> para silenciar / restaurar.</div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

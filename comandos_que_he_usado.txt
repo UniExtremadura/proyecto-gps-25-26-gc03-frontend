@@ -1,0 +1,30 @@
+# Ejecutar el proxy server
+node proxy/server.js    
+
+# Frontend (en otra terminal)
+live-server --host=localhost --port=4200
+
+# Si da errores o dice que falta algo, usa npm install y lo que dice que falta
+
+# En el controller modificar las cookies para el update:
+
+Services > AccessService.java
+
+Apartir de la linea 97 hasta antes del if(allResponse != null)
+
+            // Cookies no-HTTP for convenience (username / isArtist) and secure HTTP-only for token
+            cookieUsername = new Cookie("username", user.getUsername());
+            cookieIsArtist = new Cookie("isArtist", String.valueOf(user.isArtist()));
+            cookieIdUser = new Cookie("idUsuario", String.valueOf(user.getId()));
+            cookieUsername.setHttpOnly(false);
+            cookieIsArtist.setHttpOnly(false);
+            cookieIdUser.setHttpOnly(false);
+            cookieUsername.setSecure(false);
+            cookieIsArtist.setSecure(false);
+            cookieIdUser.setSecure(false);
+            cookieUsername.setPath("/");
+            cookieIsArtist.setPath("/");
+            cookieIdUser.setPath("/");
+            cookieUsername.setMaxAge(24 * 60 * 60);
+            cookieIsArtist.setMaxAge(24 * 60 * 60);
+            cookieIdUser.setMaxAge(24 * 60 * 60);

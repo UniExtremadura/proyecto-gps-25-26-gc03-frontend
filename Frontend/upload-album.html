@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Álbum - MusicFly</title>
+    <link rel="stylesheet" href="content-style.css">
+</head>
+<body>
+
+<header>
+    <h1>MusicFly</h1>
+    <div id="status">Gestor de Contenido</div>
+</header>
+
+<main>
+    <div class="content-container">
+        <div class="content-card">
+            <div class="header-section">
+                <h2>Crear Nuevo Álbum</h2>
+                <p>Agrupa tus canciones en un lanzamiento oficial</p>
+            </div>
+
+            <form id="albumForm">
+                <div class="form-group">
+                    <label for="albumName">Nombre del Álbum</label>
+                    <input type="text" id="albumName" placeholder="Ej. The Dark Side of the Moon" required>
+                </div>
+
+                <div class="row-group">
+                    <div class="form-group half">
+                        <label for="releaseDate">Fecha de Lanzamiento</label>
+                        <input type="date" id="releaseDate" required>
+                    </div>
+
+                    <div class="form-group half">
+                        <label for="albumGenre">Género Principal</label>
+                        <select id="albumGenre" required>
+                            <option value="" disabled selected>Selecciona un género</option>
+                        </select>
+                    </div>
+                </div>
+
+                <hr class="divider">
+
+                <div class="participants-section">
+                    <p class="section-title">Colaboradores (IDs de Artistas)</p>
+                    <p class="hint">Añade los IDs de otros artistas que participaron.</p>
+
+                    <div id="participantsContainer">
+                    </div>
+
+                    <button type="button" id="addParticipantBtn" class="secondary-btn">+ Añadir Participante</button>
+                </div>
+
+                <button type="submit" class="action-btn">Crear Álbum</button>
+            </form>
+
+            <div id="messageBox" class="message hidden"></div>
+        </div>
+    </div>
+</main>
+
+<script src="album-app.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Music Player - Login Obligatorio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Sección de Login -->
+    <div id="login-section">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Usuario">
+        <input type="password" id="password" placeholder="Contraseña">
+        <button id="login-btn">Ingresar</button>
+        <p id="login-status"></p>
+    </div>
+
+    <!-- Sección del reproductor (invisible hasta login) -->
+    <div id="player-section" hidden>
+        <input type="text" id="search-bar" placeholder="Buscar canciones...">
+        <div id="song-list"></div>
+
+        <div id="player" hidden>
+            <img id="cover" src="" alt="Portada">
+            <h3 id="song-title"></h3>
+            <p id="song-artist"></p>
+            <audio id="audio-player" controls></audio>
+            <div>
+                <button id="prev-btn">Prev</button>
+                <button id="next-btn">Next</button>
+                <button id="download-btn">Descargar</button>
+                <button id="mute-btn">🔊</button>
+                <input type="range" id="volume-slider" min="0" max="100">
+                <span id="volume-value">100%</span>
+            </div>
+            <p id="player-status"></p>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
