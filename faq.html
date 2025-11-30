@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preguntas Frecuentes — MusicFly</title>
+
+  <style>
+    /* ==== RESET Y ESTILOS GENERALES ==== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #121212; /* Fondo muy oscuro */
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; /* Alineado arriba para permitir scroll */
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    /* ==== CONTENEDOR TIPO TARJETA ==== */
+    .faq-container {
+      background-color: #181818; /* Gris tarjeta */
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.7);
+      width: 100%;
+      max-width: 800px; /* Ancho cómodo para lectura */
+      margin-top: 40px; /* Espacio para el botón de volver */
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    /* ==== TIPOGRAFÍA ==== */
+    h2.main-title {
+      text-align: center;
+      color: #1db954; /* Verde Spotify */
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    p.subtitle {
+      text-align: center;
+      color: #b3b3b3;
+      margin-bottom: 30px;
+      font-size: 1rem;
+    }
+
+    h3.section-title {
+      color: #1db954;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+      border-bottom: 1px solid #333;
+      padding-bottom: 10px;
+    }
+
+    /* ==== ITEMS DE PREGUNTA/RESPUESTA ==== */
+    .faq-item {
+      margin-bottom: 20px;
+    }
+
+    .question {
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .answer {
+      color: #b3b3b3; /* Gris claro para texto largo */
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    /* ==== BOTÓN VOLVER (FLOTANTE) ==== */
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: rgba(29, 185, 84, 0.1); /* Verde transparente */
+      color: #1db954;
+      border: 2px solid #1db954;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      z-index: 100;
+      font-size: 0.9rem;
+    }
+
+    .back-btn:hover {
+      background-color: #1db954;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    /* ==== BOTÓN DE CONTACTO ==== */
+    .contact-btn {
+      display: inline-block;
+      background-color: #1db954;
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 500px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .contact-btn:hover {
+      background-color: #1ed760;
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    /* ==== FOOTER INTERNO ==== */
+    .footer-text {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #333;
+      color: #555;
+      font-size: 0.8rem;
+    }
+
+    /* ==== ANIMACIÓN ==== */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ==== RESPONSIVE ==== */
+    @media (max-width: 600px) {
+      .faq-container {
+        padding: 25px;
+      }
+      h2.main-title {
+        font-size: 1.6rem;
+      }
+      .back-btn {
+        position: absolute; /* Deja de ser fixed en pantallas muy chicas para no tapar */
+      }
+      body {
+        padding-top: 80px; /* Espacio para el botón absoluto */
+      }
+    }
+  </style>
+</head>
+<body>
+
+<a href="index.html" class="back-btn">&larr; Volver</a>
+
+<div class="faq-container">
+
+  <h2 class="main-title">Preguntas Frecuentes</h2>
+  <p class="subtitle">Todo lo que necesitas saber sobre MusicFly</p>
+
+  <h3 class="section-title">🎵 Sobre MusicFly</h3>
+
+  <div class="faq-item">
+    <div class="question">¿Qué es MusicFly?</div>
+    <div class="answer">
+      MusicFly es una aplicación diseñada para descubrir y descargar música a partir del catálogo público de YouTube. Convertimos tus videos favoritos en archivos de audio de alta calidad para que puedas escucharlos donde quieras.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">¿Tengo que pagar para usarla?</div>
+    <div class="answer">
+      Actualmente, el uso básico de MusicFly es gratuito. En el futuro, podríamos introducir planes Premium para funcionalidades exclusivas (como mayor velocidad o calidad sin compresión), pero siempre avisaremos con antelación.
+    </div>
+  </div>
+
+  <h3 class="section-title">📥 Funcionamiento y Descargas</h3>
+
+  <div class="faq-item">
+    <div class="question">¿Dónde se guardan mis canciones?</div>
+    <div class="answer">
+      Al descargar una canción, esta se almacena localmente en tu dispositivo. Puedes acceder a ella desde la biblioteca de MusicFly o desde cualquier gestor de archivos en tu carpeta de "Descargas" o "MusicFly".
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">¿Por qué falla una descarga?</div>
+    <div class="answer">
+      Puede deberse a varios factores: conexión a internet inestable, el video original fue eliminado de YouTube, o el contenido tiene restricciones geográficas (bloqueo regional). Intenta buscar otra versión de la misma canción.
+    </div>
+  </div>
+
+  <h3 class="section-title">🛡️ Seguridad y Legalidad</h3>
+
+  <div class="faq-item">
+    <div class="question">¿Es seguro para mi dispositivo?</div>
+    <div class="answer">
+      Sí. MusicFly no contiene malware ni virus. Solo procesamos el audio del video solicitado. Sin embargo, siempre recomendamos descargar la aplicación solo desde fuentes oficiales.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">Política de Copyright</div>
+    <div class="answer">
+      Respetamos la propiedad intelectual. MusicFly es una herramienta para uso personal (Private Copy). No alojamos contenido pirateado en nuestros servidores. Si eres dueño de derechos y deseas realizar un reclamo, contáctanos.
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 40px;">
+    <p style="color: #fff; margin-bottom: 10px;">¿No encontraste tu respuesta?</p>
+    <a href="mailto:soporte@musicfly.com" class="contact-btn">Contactar Soporte</a>
+  </div>
+
+  <div class="footer-text">
+    © 2025 MusicFly — Desarrollado con pasión por la música.
+  </div>
+
+</div>
+
+</body>
+</html>
