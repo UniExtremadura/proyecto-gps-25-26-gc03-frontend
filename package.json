@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "express": "^5.1.0",
+    "node-fetch": "^3.3.2"
+  },
+  "scripts": {
+    "dev": "live-server --host=localhost --port=4200",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

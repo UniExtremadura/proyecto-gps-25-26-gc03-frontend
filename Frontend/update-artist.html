@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Artista - MusicFly</title>
+    <link rel="stylesheet" href="artist-style.css">
+</head>
+<body>
+
+<header>
+    <h1>MusicFly</h1>
+    <div id="status">Panel de Artista</div>
+</header>
+
+<main>
+    <div class="profile-container">
+        <div class="profile-card">
+            <div class="header">
+                <h2>Configuración de Artista</h2>
+                <p>Gestiona tu identidad, géneros y redes</p>
+            </div>
+
+            <form id="artistForm">
+                <div class="form-group">
+                    <label for="username">Usuario Vinculado</label>
+                    <input type="text" id="username" disabled class="read-only">
+                </div>
+
+                <div class="form-group">
+                    <label for="artisticName">Nombre Artístico</label>
+                    <input type="text" id="artisticName" placeholder="Ej. Bad Bunny" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Biografía Artística</label>
+                    <textarea id="description" rows="3" placeholder="Cuéntanos sobre tu música..."></textarea>
+                </div>
+
+                <hr class="divider">
+
+                <p class="section-title">Estilo Musical</p>
+                <div class="form-group">
+                    <label for="genres">Géneros (Mantén Ctrl/Cmd para seleccionar varios)</label>
+
+                    <div class="select-wrapper">
+                        <select id="genres" multiple size="5"></select>
+                    </div>
+                </div>
+
+                <hr class="divider">
+
+                <p class="section-title">Redes Sociales</p>
+                <div id="socialMediaContainer">
+                </div>
+                <button type="button" id="addLinkBtn" class="secondary-btn">+ Añadir Red Social</button>
+
+                <hr class="divider">
+
+                <p class="section-title">Datos Bancarios</p>
+                <div class="form-group">
+                    <label for="accountPropietary">Titular de la Cuenta</label>
+                    <input type="text" id="accountPropietary" placeholder="Nombre y Apellidos">
+                </div>
+
+                <div class="form-group">
+                    <label for="iban">IBAN</label>
+                    <input type="text" id="iban" placeholder="ES00 0000 0000 0000 0000">
+                </div>
+
+                <button type="submit" class="save-btn">Guardar Cambios</button>
+            </form>
+
+            <div id="messageBox" class="message hidden"></div>
+        </div>
+    </div>
+</main>
+
+<script src="artist-app.js"></script>
+</body>
+</html>

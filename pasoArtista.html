@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertirse en Artista - MusicFly</title>
+    <link rel="stylesheet" href="style_victor.css">
+</head>
+<body>
+
+<header>
+    <h1>MusicFly</h1>
+    <div id="status">Zona de Artistas</div>
+    <button id="btn-green">Volver al Perfil</button>
+</header>
+
+<main>
+    <div class="profile-container">
+        <div class="profile-card">
+            <div class="header">
+                <h2>¡Conviértete en Artista!</h2>
+                <p>Completa tu información legal y artística para empezar.</p>
+            </div>
+
+            <form id="artistForm">
+                <div class="form-group">
+                    <label for="artistName">Nombre Artístico *</label>
+                    <input type="text" id="artistName" required placeholder="Ej. Los Pajaritos">
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Biografía / Estilo *</label>
+                    <textarea id="description" rows="3" required placeholder="Describe tu música..."></textarea>
+                </div>
+
+                <hr style="margin: 20px 0; border-top: 1px solid #ddd;">
+                <p style="font-size: 0.9em; color: #666; margin-bottom: 10px;">Datos Bancarios (Requeridos por el DTO)</p>
+
+                <div class="form-group">
+                    <label for="accountPropietary">Titular de la Cuenta *</label>
+                    <input type="text" id="accountPropietary" required placeholder="Nombre completo del titular">
+                </div>
+
+                <div class="form-group">
+                    <label for="iban">IBAN *</label>
+                    <input type="text" id="iban" required placeholder="ES00 0000 0000 0000 0000 0000">
+                </div>
+
+                <button type="submit" class="save-btn" style="background-color: #9c27b0;">Confirmar Solicitud</button>
+            </form>
+
+            <div id="messageBox" class="message hidden"></div>
+        </div>
+    </div>
+</main>
+
+<script src="update.js"></script>
+</body>
+</html>

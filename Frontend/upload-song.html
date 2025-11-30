@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir Canción - MusicFly</title>
+    <link rel="stylesheet" href="content-style.css">
+</head>
+<body>
+
+<header>
+    <h1>MusicFly</h1>
+    <div id="status">Gestor de Contenido</div>
+</header>
+
+<main>
+    <div class="content-container">
+        <div class="content-card">
+            <div class="header-section">
+                <h2>Subir Nueva Canción</h2>
+                <p>Añade un nuevo tema a tu discografía</p>
+            </div>
+
+            <form id="songForm">
+                <div class="form-group">
+                    <label for="songName">Título de la Canción</label>
+                    <input type="text" id="songName" placeholder="Ej. Bohemian Rhapsody" required>
+                </div>
+
+                <div class="row-group">
+                    <div class="form-group half">
+                        <label for="duration">Duración (segundos)</label>
+                        <input type="number" id="duration" step="0.1" placeholder="Ej. 240.5" required>
+                    </div>
+
+                    <div class="form-group half">
+                        <label for="genre">Género</label>
+                        <select id="genre" required>
+                            <option value="" disabled selected>Selecciona un género</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="albumId">ID del Álbum (Opcional)</label>
+                    <input type="number" id="albumId" placeholder="ID del álbum si pertenece a uno">
+                </div>
+
+                <div class="form-group">
+                    <label for="songUrl">URL del Contenido (YouTube)</label>
+                    <input type="url" id="songUrl" placeholder="https://youtube.com/..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="coverUrl">URL de la Portada</label>
+                    <input type="url" id="coverUrl" placeholder="https://..." required>
+                </div>
+
+                <button type="submit" class="action-btn">Publicar Canción</button>
+            </form>
+
+            <div id="messageBox" class="message hidden"></div>
+        </div>
+    </div>
+</main>
+
+<script src="song-app.js"></script>
+</body>
+</html>

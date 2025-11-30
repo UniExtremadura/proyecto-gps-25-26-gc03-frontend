@@ -1,0 +1,7 @@
+# Ejecutar el proxy server
+node proxy/server.js    
+
+# Frontend (en otra terminal)
+live-server --host=localhost --port=4200
+
+# Si da errores o dice que falta algo, usa npm install y lo que dice que falta

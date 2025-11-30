@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicFly - Registro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="auth-card">
+
+    <div class="header-section">
+        <h2>Crear Cuenta</h2>
+        <p>Únete a MusicFly gratis.</p>
+    </div>
+
+    <form id="register-form">
+        <div class="form-group">
+            <label>Usuario</label>
+            <input type="text" name="username" required placeholder="Ej. musicfan123" autocomplete="username">
+        </div>
+
+        <div class="form-group">
+            <label>Contraseña</label>
+            <input type="password" name="password" required placeholder="Crea una contraseña segura" autocomplete="new-password">
+        </div>
+
+        <div class="row-group">
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" name="name" required placeholder="Tu nombre" autocomplete="given-name">
+            </div>
+            <div class="form-group">
+                <label>Apellidos</label>
+                <input type="text" name="surname" required placeholder="Tus apellidos" autocomplete="family-name">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Correo electrónico</label>
+            <input type="email" name="email" required placeholder="nombre@ejemplo.com" autocomplete="email">
+        </div>
+
+        <div class="form-group">
+            <label>Teléfono (Opcional)</label>
+            <input type="tel" name="phone" placeholder="+34 600 000 000" autocomplete="tel">
+        </div>
+
+        <div class="row-group">
+            <div class="form-group">
+                <label for="reg-birthday">Fecha de Nacimiento</label>
+                <input type="date" id="reg-birthday" name="birthday" required>
+            </div>
+            <div class="form-group">
+                <label for="reg-gender">Género</label>
+                <select id="reg-gender" name="gender" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="MALE">Masculino</option>
+                    <option value="FEMALE">Femenino</option>
+                    <option value="OTHER">Otro</option>
+                </select>
+            </div>
+        </div>
+
+        <button type="submit" class="action-btn">Registrarse</button>
+    </form>
+
+    <div id="register-status" class="message"></div>
+
+    <a href="index.html" class="auth-link">
+        ¿Ya tienes cuenta? Inicia sesión aquí
+    </a>
+</div>
+
+<script src="register.js"></script>
+
+</body>
+</html>
