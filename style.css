@@ -445,3 +445,52 @@ body {
         width: 95%;
     }
 }
+
+/* ==== FOOTER SECTION ==== */
+footer {
+  width: 100%;
+  margin-top: 40px; /* Separación del contenido principal */
+  padding: 20px 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px; /* Espacio entre los botones */
+  flex-wrap: wrap; /* Para que se adapten en móviles */
+}
+
+/* Estilo común para los botones del footer */
+footer button {
+  background-color: transparent;
+  color: #b3b3b3; /* Color gris suave para no distraer */
+  border: 2px solid #333; /* Borde oscuro sutil */
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase; /* Opcional: hace que se vea más como menú */
+  letter-spacing: 0.5px;
+}
+
+/* Efecto Hover: Se iluminan al pasar el ratón */
+footer button:hover {
+  border-color: #1db954; /* Borde verde característico */
+  color: #fff; /* Texto blanco brillante */
+  background-color: rgba(29, 185, 84, 0.1); /* Fondo verde muy transparente */
+  transform: translateY(-2px); /* Pequeño salto hacia arriba */
+}
+
+/* Ajuste específico para pantallas pequeñas */
+@media (max-width: 480px) {
+  footer {
+    flex-direction: column; /* Botones uno debajo del otro en móvil */
+    gap: 10px;
+  }
+
+  footer button {
+    width: 100%;
+    max-width: 200px; /* Ancho máximo controlado */
+  }
+}
